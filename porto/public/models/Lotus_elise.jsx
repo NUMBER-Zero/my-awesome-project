@@ -15,7 +15,7 @@ import { SkeletonUtils } from 'three-stdlib'
 
 export function Lotus_elise(props) {
   const group = React.useRef()
-  const { scene, animations } = useGLTF('/lotus_elise-transformed.glb')
+  const { scene, animations } = useGLTF('/models/lotus_elise-transformed.glb')
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene])
   const { nodes, materials } = useGraph(clone)
   const { actions } = useAnimations(animations, group)
@@ -122,4 +122,4 @@ export function Lotus_elise(props) {
   )
 }
 
-useGLTF.preload('/lotus_elise-transformed.glb')
+useGLTF.preload('/models/lotus_elise-transformed.glb')

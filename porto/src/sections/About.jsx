@@ -4,6 +4,8 @@ import { OrbitControls } from '@react-three/drei';
 import GradientSpheres from "../components/GradientSpheres";
 import TitlesHeader from '../components/TitlesHeader';
 import { Alien } from '../../public/models/Alien';
+import { Lotus_elise } from '../../public/models/Lotus_elise';
+
 
 const About = () => {
   return (
@@ -59,10 +61,21 @@ const About = () => {
                                     <div className='w-full h-full'>
 
                                             <Canvas>
-                                                <ambientLight intensity={0.5} />
-                                                <pointLight position={[10, 10, 10]} />
-                                                <Alien scale={[0.5, 0.5, 0.5]} position={[0, -1, 0]} />
-                                                <OrbitControls />
+                                                
+                                                {/* <Alien scale={[0.5, 0.5, 0.5]} position={[0, -1, 0]} /> */}
+                                               <ambientLight intensity={2} />
+                                                                <directionalLight
+                                                                    position={[100, 20, 1]}
+                                                                    intensity={20}
+                                                                />
+                                                                <Lotus_elise position={[0, -1, 0]} scale={2} />
+                                                                <OrbitControls 
+                                                                    enableZoom={false}
+                                                                    minPolarAngle={0}
+                                                                    maxPolarAngle={Math.PI/2}
+                                                                    enablePan={false} // Optional: disable panning/position movement
+                                                                    rotateSpeed={0.5} // Optional: slow down rotation
+                                                                />
                                             </Canvas>
 
                                     </div>
