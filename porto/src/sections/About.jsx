@@ -1,4 +1,6 @@
 import React from 'react'
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import GradientSpheres from "../components/GradientSpheres";
 import TitlesHeader from '../components/TitlesHeader';
 import { Alien } from '../../public/models/Alien';
@@ -56,12 +58,12 @@ const About = () => {
                                     {/* canvas here  */}
                                     <div className='w-full h-full'>
 
-                                        <canvas>
-                                           
-                                            <Alien position={[0, 0, 0]} />
-                                                 
-
-                                        </canvas>
+                                            <Canvas>
+                                                <ambientLight intensity={0.5} />
+                                                <pointLight position={[10, 10, 10]} />
+                                                <Alien scale={[0.5, 0.5, 0.5]} position={[0, -1, 0]} />
+                                                <OrbitControls />
+                                            </Canvas>
 
                                     </div>
 
