@@ -58,7 +58,183 @@ section {
   .flex-center {
     @apply flex items-center justify-center;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ /* text BG animation  clip */
+ .gradient-text {
+      background-image: linear-gradient(90deg, #ffffff, #0b5bb6, #ffffff);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-text-gradient {
+    animation: textGradient 8s linear infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+
+
+
+
+
+  /* card hover effects on hover show border gradient  */
+  @keyframes gradientShadow2 {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .hover-gradient-shadow {
+    position: relative;
+    z-index: 0;
+    transition: all 0.3s ease;
+  }
+
+  .hover-gradient-shadow::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+    background-size: 400% 400%;
+    animation: gradientShadow2 6s ease infinite;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .hover-gradient-shadow:hover::before {
+    opacity: 1;
+  }
+
+
+
+
+
+  /* CARDs gradient glow : used in car card only  */
+  @keyframes gradientShadow {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .gradient-glow {
+    position: relative;
+    z-index: 0;
+  }
+
+  .gradient-glow::before {
+    content: '';
+    position: absolute;
+    inset: 0px; /* slightly larger than the div */
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(270deg, #0B0620, #1a1937, #2c1234);
+    background-size: 400% 400%;
+    animation: gradientShadow 8s ease infinite;
+    filter: blur(3px) brightness(1);
+    transition: filter 0.3s linear;
+  }
+
+  .gradient-glow:hover::before {
+    filter: blur(5px) brightness(1.5);
+  }
+
+
+
+/* cards on hover we have more blur and normal state is gradient border  */
+@keyframes pulseBorderGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
+
+.card-glow-wrapper {
+  position: relative;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-glow-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(270deg, #ff6ec4, #7873f5, #4ade80);
+  background-size: 400% 400%;
+  animation: pulseBorderGradient 6s ease infinite;
+
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+
+  filter: blur(6px); /* default blur */
+  opacity: 1;
+  transition: filter 0.3s ease-in-out;
+}
+
+.card-glow-wrapper:hover::before {
+  filter: blur(14px); /* stronger glow on hover */
+}
+
+
+}
+
+
 
 @layer components {
   .gradient-title {
@@ -349,5 +525,28 @@ section {
 @media screen and (min-width: 1024px) {
   .testimonial-card:nth-of-type(even) {
     transform: translateY(70px);
+  }
+}
+
+
+
+
+/* text BG colors animation  */
+
+ @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+@keyframes textGradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }

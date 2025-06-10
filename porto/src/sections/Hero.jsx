@@ -1,11 +1,15 @@
 import React from "react";
 import GradientSpheres from "../components/GradientSpheres";
+import  Particles from "react-tsparticles";
 
 const Hero = () => {
     return (
         <section
             id="home"
             className="h-dvh border-6 border-pink-100 relative text-white-50 px-5 md:p-0"  >
+                {/* Particles Background */}
+      
+
                 {/* Sphere-Component */}
                 <GradientSpheres sphere1Class={"gradient-sphere sphere-1"}  />
                 <GradientSpheres sphere1Class={"gradient-sphere sphere-2"}  />
@@ -29,7 +33,7 @@ const Hero = () => {
 
                         <div className="md:mt-40 mt-20 border-7 border-blue-700"> 
                                 <p className="font-medium md:text-2xl text-base"> hey im here </p>
-                                <h1 className="font-bold md:text-9xl text-5xl"> Yahya Ouarrak </h1>
+                                <h1 className="font-bold  animate-text-gradient md:text-9xl text-5xl"> Yahya Ouarrak </h1>
                                 <h1 className="font-bold md:text-9xl text-5xl"> Oxycodon07</h1>
                         </div> 
 
