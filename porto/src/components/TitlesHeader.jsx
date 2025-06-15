@@ -5,7 +5,7 @@ const TitlesHeader = ({title,text,number }) => {
     <div className='flex justify-between items-center'>
         {/* left side */}
         <div>
-            <h1 className='gradient-text animate-text-gradient gradient-title font-semibold md:text-6xl text-4xl'>{title}</h1>
+            <h1 className='gradient-text animate-text-gradient gradient-title font-semibold md:text-6xl text-4xl mb-5'>{title}</h1>
             <p className='gradient-title  md:text-3xl md:mt-5 font-medium gradient-title'>{text}</p>
         </div>
         {/* right side  */}

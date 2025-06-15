@@ -12,13 +12,13 @@ export const particlesConfig = {
     color: { value: "#598eff" }, // Using your blue-50 color
     move: {
       enable: true,
-      speed: 2,
+      speed: 3,
       direction: "none",
       random: true,
       straight: false
     },
     number: { 
-      value: 60,
+      value: 160,
       density: { enable: true }
     },
     opacity: { value: 0.7 },
